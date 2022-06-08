@@ -1,11 +1,28 @@
 version: '3.1'
 
 services:
+  cache:
+    image: redis:6.2-alpine
+    restart: always
+
+    container_name: shequ-cache
+
+    ports:
+      - 10001:6379
+
   node:
     image: node:16
 
+    depends_on:
+      - cache
+
     container_name: shequ
     working_dir: /home/ubuntu/shequ
+
+    environment:
+      - NODE_ENV: production
+      - REDIS_HOST: cache
+      - REDIS_PORT: 10001
 
     volumes:
       - ./:/home/ubuntu/shequ
