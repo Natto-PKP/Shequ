@@ -1,6 +1,6 @@
 {
   "name": "shequ",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "private": true,
   "main": "dist/index.js",
   "scripts": {
@@ -18,13 +18,17 @@
   "homepage": "https://github.com/Natto-PKP/Shequ#readme",
   "dependencies": {
     "axios": "^0.27.2",
+    "canvas": "^2.9.1",
     "dayjs": "^1.11.3",
-    "discord-sucrose": "^4.1.18",
+    "discord-sucrose": "^4.1.24",
     "discord.js": "^13.8.0",
-    "dotenv": "^16.0.1"
+    "dotenv": "^16.0.1",
+    "random-words": "^1.1.2",
+    "redis": "^4.1.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.40",
+    "@types/random-words": "^1.1.2",
     "@typescript-eslint/eslint-plugin": "^5.27.1",
     "@typescript-eslint/parser": "^5.27.1",
     "eslint": "^8.17.0",
