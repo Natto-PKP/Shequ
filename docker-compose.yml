@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   cache:
-    image: redis:6.2-alpine
+    image: redis:latest
     restart: always
 
     container_name: shequ-cache
@@ -11,7 +11,7 @@ services:
       - 10001:6379
 
   node:
-    image: node:16
+    image: node:latest
 
     depends_on:
       - cache
@@ -20,17 +20,11 @@ services:
     working_dir: /home/ubuntu/shequ
 
     environment:
-      - NODE_ENV: production
-      - REDIS_HOST: cache
-      - REDIS_PORT: 10001
+      - NODE_ENV=production
+      - REDIS_HOST=cache
+      - REDIS_PORT=10001
 
     volumes:
       - ./:/home/ubuntu/shequ
 
-    command: >
-      bash -c "
-        npm config set cache /tmp --global 
-        && npm i 
-        && npm run build
-        && node dist/index.js
-      "
+    command: bash -c "npm config set cache /tmp --global && npm i && npm run build && node dist/index.js"
