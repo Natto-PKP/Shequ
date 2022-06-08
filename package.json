@@ -1,6 +1,6 @@
 {
   "name": "shequ",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "private": true,
   "main": "dist/index.js",
   "scripts": {
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Natto-PKP/Shequ#readme",
   "dependencies": {
+    "axios": "^0.27.2",
+    "dayjs": "^1.11.3",
     "discord-sucrose": "^4.1.18",
     "discord.js": "^13.8.0",
     "dotenv": "^16.0.1"
