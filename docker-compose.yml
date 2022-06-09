@@ -20,7 +20,6 @@ services:
     working_dir: /home/ubuntu/shequ
 
     environment:
-      - NODE_ENV=production
       - REDIS_HOST=cache
       - REDIS_PORT=10001
 
