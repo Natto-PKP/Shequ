@@ -1,5 +1,5 @@
 {
-  "include": ["src/**/*", "waiting/typing.ts"],
+  "include": ["src/**/*", "src/commands/guilds/713172382042423352/games/typing.ts"],
   "exclude": ["node_modules"],
 
   "compilerOptions": {
