@@ -10,6 +10,8 @@ services:
     ports:
       - 10001:6379
 
+    command: redis-server --save 20 1 --loglevel warning
+
   node:
     image: node:16
 
@@ -20,10 +22,13 @@ services:
     working_dir: /home/ubuntu/shequ
 
     environment:
-      - REDIS_HOST=cache
-      - REDIS_PORT=10001
+      REDIS_HOST: cache
+      REDIS_PORT: 10001
 
     volumes:
       - ./:/home/ubuntu/shequ
+
+    links:
+      - cache
 
     command: bash -c "npm config set cache /tmp --global && npm i --production=false && npm run build && node dist/index.js"
