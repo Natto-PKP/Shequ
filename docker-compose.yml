@@ -7,8 +7,6 @@ services:
     restart: always
     expose:
       - 6379
-    volumes:
-      - cache:/data
     command: redis-server --save 20 1 --loglevel warning
 
   node:
@@ -17,7 +15,7 @@ services:
     restart: always
     working_dir: /home/ubuntu/shequ
     depends_on:
-      - cache
+      - shequ-cache
     environment:
       REDIS_HOST: shequ-cache
       REDIS_PORT: 6379
