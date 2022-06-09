@@ -3,12 +3,11 @@ version: '3.8'
 services:
   cache:
     image: redis:6.2-alpine
-    container_name: shequ-cache
     restart: always
     expose:
       - 6379
     volumes:
-      - shequ-cache:/data
+      - cache:/data
     command: redis-server --save 20 1 --loglevel warning
 
   node:
@@ -17,12 +16,12 @@ services:
     restart: always
     working_dir: /home/ubuntu/shequ
     depends_on:
-      - shequ-cache
+      - cache
     environment:
-      REDIS_HOST: shequ-cache
+      REDIS_HOST: cache
       REDIS_PORT: 6379
     volumes:
       - ./:/home/ubuntu/shequ
     links:
-      - shequ-cache
+      - cache
     command: bash -c "npm config set cache /tmp --global && npm i --production=false && npm run build && node dist/index.js"
