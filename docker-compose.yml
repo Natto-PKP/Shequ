@@ -19,10 +19,10 @@ services:
     depends_on:
       - cache
     environment:
-      REDIS_HOST: cache
+      REDIS_HOST: shequ-cache
       REDIS_PORT: 6379
     volumes:
       - ./:/home/ubuntu/shequ
     links:
-      - cache
+      - shequ-cache
     command: bash -c "npm config set cache /tmp --global && npm i --production=false && npm run build && node dist/index.js"
