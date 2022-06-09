@@ -26,4 +26,4 @@ services:
     volumes:
       - ./:/home/ubuntu/shequ
 
-    command: bash -c "npm config set cache /tmp --global && npm i --only=dev && npm i && npm run build && node dist/index.js"
+    command: bash -c "npm config set cache /tmp --global && npm i --production=false && npm run build && node dist/index.js"
