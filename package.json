@@ -24,8 +24,7 @@
     "discord.js": "^13.8.0",
     "dotenv": "^16.0.1",
     "random-words": "^1.1.2",
-    "redis": "^4.1.0",
-    "typescript": "^4.7.3"
+    "redis": "^4.1.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.40",
@@ -35,6 +34,7 @@
     "eslint": "^8.17.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "prettier": "^2.6.2",
-    "ts-node": "^10.8.1"
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.3"
   }
 }
