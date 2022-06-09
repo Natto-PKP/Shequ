@@ -19,7 +19,7 @@ services:
     depends_on:
       - shequ-cache
     environment:
-      REDIS_HOST: shequ_default
+      REDIS_HOST: cache
       REDIS_PORT: 6379
     volumes:
       - ./:/home/ubuntu/shequ
