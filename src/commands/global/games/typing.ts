@@ -5,10 +5,10 @@ import type { Options as RandomWordsOptions } from 'random-words';
 import type { SubCommand } from 'discord-sucrose';
 import type { GuildMember, TextChannel } from 'discord.js';
 
-import cache from '../../../../cache';
+import cache from '../../../cache';
 
-import { fontFamilies } from '../../../../functions/canvas';
-import { colors } from '../../../../config';
+import { fontFamilies } from '../../../functions/canvas';
+import { colors } from '../../../config';
 
 /**
  * Print a word in a png file
